@@ -387,15 +387,6 @@ if ((isset($TaxcomSessionToken)) AND ($TaxcomSessionToken != "") AND ($TaxcomSes
 						)";	
 
 						$request_create = mysqli_query($db_connect, $query_create) or die(mysql_error() . " " . mysql_errno());		
-
-						if ($request_create)
-						{
-							echo "Таблица успешно создана. <br>\n";
-						}
-						else
-						{
-							echo "Таблица уже была создана ренее. <br>\n";
-						}
 						
 						// Ищем такую кассу в базе
 						$query_search = "SELECT * FROM `" . $table_name . "` WHERE `kassa_id`='" . $id_kassa . "'";
