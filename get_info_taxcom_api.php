@@ -267,7 +267,7 @@ if ((isset($TaxcomSessionToken)) AND ($TaxcomSessionToken != "") AND ($TaxcomSes
       }
       
       // lastDocumentState // Состояние последнего документа
-      // OK - Хорошо / Warning - Замечание? / Problem - Проблема
+      // OK - Хорошо / Warning - Предупреждение / Problem - Проблема
       if (isset($KKTInfo_json['cashdesk']['lastDocumentState']) AND ($KKTInfo_json['cashdesk']['lastDocumentState'] != "") AND ($KKTInfo_json['cashdesk']['lastDocumentState'] != NULL))
       {
        $lastDocumentState = $KKTInfo_json['cashdesk']['lastDocumentState'];
