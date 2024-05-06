@@ -23,11 +23,11 @@ $table_name = "db_kassa";  // Имя таблицы, в которую внос�
 // Попытка подключения в SQL-базе
 try
 {
-    $db_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+ $db_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 }
 catch (mysqli_sql_exception $e)
 {
-  $message = "Не удается подключиться к базе: " . mysqli_connect_error();
+ $message = "Не удается подключиться к базе: " . mysqli_connect_error();
  die($message);
 }
 
