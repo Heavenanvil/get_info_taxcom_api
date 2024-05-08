@@ -19,6 +19,7 @@ $db_name = "your_db_name"; // Имя базы
 $db_user = "your_db_user"; // Имя пользователя базы
 $db_pass = "your_db_pass"; // Пароль пользователя базы
 $table_name = "db_kassa";  // Имя таблицы, в которую вносятся значения
+// Еще обращаем внимание на 80 и 111 строку в коде.
 
 // Попытка подключения в SQL-базе
 try
@@ -76,7 +77,7 @@ if ((isset($TaxcomSessionToken)) AND ($TaxcomSessionToken != "") AND ($TaxcomSes
  $DepartmentList=curl_exec($ch_DepartmentList);
  curl_close($ch_DepartmentList);
  $DepartmentList_json = json_decode($DepartmentList, true);
- $department_id = $DepartmentList_json['records'][0]['id']; // Получаем id подразделения, я выбрал 0, возможно у вас будет другое, посмотреть можно через "var_dump(DepartmentList_json);"
+ $department_id = $DepartmentList_json['records'][0]['id']; // Получаем id подразделения, Я ВЫБРАЛ ДЛЯ СЕБЯ 0, возможно у вас будет другое, посмотреть можно через "var_dump(DepartmentList_json);"
  $department_id = mb_substr($department_id, 0, 64); // Здесь и далее, на всякий случай, обрезаем максимальную длину строки, для внесения в базу.
  
  // Если id подразделения успешно получен
@@ -107,7 +108,7 @@ if ((isset($TaxcomSessionToken)) AND ($TaxcomSessionToken != "") AND ($TaxcomSes
    {
     $id_kassa = $id_array[$i];
     $id_kassa = mb_substr($id_kassa, 0, 64);
-    $timestamp = date("Y-m-d H:i:s", strtotime("+5 hour")); // Определяем текущее время и дату + корректируем часовой пояс
+    $timestamp = date("Y-m-d H:i:s", strtotime("+5 hour")); // Определяем текущее время и дату + корректируем под СВОЙ часовой пояс
     
     // Если id кассы успешно получен
     if ((isset($id_kassa)) AND ($id_kassa != "") AND ($id_kassa != NULL))
