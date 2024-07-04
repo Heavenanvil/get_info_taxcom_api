@@ -424,7 +424,7 @@ if ((isset($TaxcomSessionToken)) AND ($TaxcomSessionToken != "") AND ($TaxcomSes
        // Если запрос выполнен успешно
        if ($request_update)
        {
-        echo "[" . $i+1 . "] Касса <b>" . $name . "</b> успешно обновлена. <br>\n";  
+        echo "[" . $i++ . "] Касса <b>" . $name . "</b> успешно обновлена. <br>\n";  
        }
       }
       else
@@ -476,7 +476,7 @@ if ((isset($TaxcomSessionToken)) AND ($TaxcomSessionToken != "") AND ($TaxcomSes
        // Если запрос выполнен успешно
        if ($request_insert)
        {
-        echo "[" . $i+1 . "] Касса <b>" . $name . "</b> успешно добавлена в базу. <br>\n"; 
+        echo "[" . $i++ . "] Касса <b>" . $name . "</b> успешно добавлена в базу. <br>\n"; 
        }
       }     
      }
